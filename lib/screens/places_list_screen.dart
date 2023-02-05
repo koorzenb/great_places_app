@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:great_places_app/screens/add_place_screen.dart';
 
 class PlaceListScreen extends StatelessWidget {
   const PlaceListScreen({super.key});
@@ -10,7 +11,9 @@ class PlaceListScreen extends StatelessWidget {
         title: const Text('Your Places'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AddPlaceScreen.routeName);
+            },
             icon: const Icon(Icons.add),
           ),
         ],

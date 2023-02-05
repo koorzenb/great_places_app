@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:great_places_app/screens/add_place_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/great_places.dart';
@@ -11,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -21,16 +21,18 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Great Places',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.indigo,
-          ).copyWith(
-            secondary: Colors.amber,
+          title: 'Great Places',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.indigo,
+            ).copyWith(
+              secondary: Colors.amber,
+            ),
           ),
-        ),
-        home: PlaceListScreen(),
-      ),
+          home: const PlaceListScreen(),
+          routes: {
+            AddPlaceScreen.routeName: (ctx) => const AddPlaceScreen(),
+          }),
     );
   }
 }
