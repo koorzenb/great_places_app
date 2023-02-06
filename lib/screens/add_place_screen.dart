@@ -26,18 +26,18 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
             child: Column(
               children: [
                 TextField(
-                  decoration: InputDecoration(labelText: 'Title'),
+                  decoration: const InputDecoration(labelText: 'Title'),
                   controller: _titleController,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                ImageInput()
+                const ImageInput()
               ],
             ),
           ),
         )),
-        Text('User inputs'),
+        const Text('User inputs'),
         ElevatedButton.icon(
           onPressed: () {},
           icon: const Icon(
