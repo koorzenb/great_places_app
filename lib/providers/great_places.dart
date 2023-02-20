@@ -10,7 +10,14 @@ class GreatPlaces with ChangeNotifier {
     return [..._items];
   }
 
-  void addPlace(String title, File image) {
-    
+  void addPlace(String pickedTitle, File? pickedmage) {
+    final newPlace = Place(
+      id: DateTime.now().toString(),
+      title: pickedTitle,
+      location: null,
+      image: pickedmage,
+    );
+    _items.add(newPlace);
+    notifyListeners();
   }
 }
