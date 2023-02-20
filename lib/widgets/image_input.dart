@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ImageInput extends StatefulWidget {
-  const ImageInput({super.key});
+  final Function onSelectImage;
+
+  const ImageInput(this.onSelectImage, {super.key});
 
   @override
   State<ImageInput> createState() => _ImageInputState();
@@ -29,7 +31,7 @@ class _ImageInputState extends State<ImageInput> {
     final appDir = await syspaths.getApplicationDocumentsDirectory();
     final fileName = path.basename(imageFile!.path);
     final savedImage = await _storedImage!.copy('${appDir.path}/$fileName');
-
+    widget.onSelectImage(savedImage);
     // TODO: check vidoe - not '_storedImage'
   }
 
