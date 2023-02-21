@@ -14,7 +14,7 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleController = TextEditingController();
-  File _pickedImage;
+  File? _pickedImage;
 
   void _selectImage(File pickedImage) {
     _pickedImage = pickedImage;
