@@ -23,13 +23,14 @@ class _ImageInputState extends State<ImageInput> {
       source: ImageSource.camera,
       maxWidth: 600,
     );
+    if (imageFile == null) {
+      return;
+    }
     setState(() {
-      if (imageFile != null) {
-        _storedImage = File(imageFile.path);
-      }
+      _storedImage = File(imageFile.path);
     });
     final appDir = await syspaths.getApplicationDocumentsDirectory();
-    final fileName = path.basename(imageFile!.path);
+    final fileName = path.basename(imageFile.path);
     final savedImage = await _storedImage!.copy('${appDir.path}/$fileName');
     widget.onSelectImage(savedImage);
     // TODO: check vidoe - not '_storedImage'
