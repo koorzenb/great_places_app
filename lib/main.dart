@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               secondary: Colors.amber,
             ),
           ),
-          home: const PlaceListScreen(),
+          home: const PlacesListScreen(),
           routes: {
             AddPlaceScreen.routeName: (ctx) => const AddPlaceScreen(),
           }),
