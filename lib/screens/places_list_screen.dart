@@ -28,17 +28,19 @@ class PlacesListScreen extends StatelessWidget {
                 child: CircularProgressIndicator(),
               )
             : Consumer<GreatPlaces>(
-                child: const Center(
-                  child: Text('Got no places yet, start adding some!'),
+                child: Center(
+                  child: const Text('Got no places yet, start adding some!'),
                 ),
-                builder: (ctx, greatPlaces, ch)
-                    => ListView.builder(
+                builder: (ctx, greatPlaces, ch) => greatPlaces.items.isEmpty
+                    ? const Center(
+                        child: Text('Got no places yet, start adding some!'),
+                      )
+                    : ListView.builder(
                         itemCount: greatPlaces.items.length,
                         itemBuilder: (ctx, i) => ListTile(
                           leading: CircleAvatar(
                             backgroundImage: FileImage(
-                              try building tutorial and see if IT works
-                              greatPlaces.items[i].image,
+                              greatPlaces.items[i].image!,
                             ),
                           ),
                           title: Text(greatPlaces.items[i].title),
