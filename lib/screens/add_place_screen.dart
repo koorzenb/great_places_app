@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:great_places_app/providers/great_places.dart';
 import 'package:great_places_app/widgets/image_input.dart';
+import 'package:great_places_app/widgets/location_input.dart';
 import 'package:provider/provider.dart';
 
 class AddPlaceScreen extends StatefulWidget {
@@ -51,12 +52,10 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                   height: 10,
                 ),
                 ImageInput(_selectImage),
-                 FIXME: add android permissions 'Adding location'
-                 FIXME: add permission 'Rendering a Dynamic Map' 
                 const SizedBox(
                   height: 10,
                 ),
-                const LocationInput()
+                const LocationInput(),
               ],
             ),
           ),
